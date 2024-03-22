@@ -17,7 +17,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-
+      boxShadow: {
+        phrase: "rgba(0, 0, 0, 0.25) 0px 0px 4px 0px",
+      },
       colors: {
         blackGray: "rgb(34, 34, 34)",
         lightPurple: "#AB9FF2",
@@ -26,6 +28,8 @@ const config: Config = {
         grayFourSeven: "rgb(47, 47, 47)",
         lightBlack: "rgb(153, 153, 153)",
         deepPurple: "rgb(171, 159, 242)",
+        lightMiniGray: "rgb(50, 50, 50)",
+        warning: "rgb(235, 55, 66)",
       },
     },
   },

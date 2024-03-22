@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@rive-app/react-canvas':
+    specifier: ^4.8.3
+    version: 4.8.3(react@18.2.0)
+  bip39:
+    specifier: ^3.1.0
+    version: 3.1.0
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
@@ -17,6 +23,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.2.0(react@18.2.0)
+  react-hook-form:
+    specifier: ^7.51.1
+    version: 7.51.1(react@18.2.0)
   tailwind-merge:
     specifier: ^2.2.2
     version: 2.2.2
@@ -258,6 +267,11 @@ packages:
     dev: false
     optional: true
 
+  /@noble/hashes@1.4.0:
+    resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
+    engines: {node: '>= 16'}
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -285,6 +299,19 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@rive-app/canvas@2.10.3:
+    resolution: {integrity: sha512-m81uwl3HuZ9p4v7/PJnA6JIO1eS3Ht0d01wYAYGNpfYlaT6bcTfwczKWUIywKgPpS8ZcH5SAkMe5P1f0R5tUGg==}
+    dev: false
+
+  /@rive-app/react-canvas@4.8.3(react@18.2.0):
+    resolution: {integrity: sha512-TkjFtwQd/2Q0GVaSQrlkn1mjd+gbtY2gcABSav0rigY5DCCXx7caGM237dfZz4Em/DCcFtZlU0s2Ftg3hIYZ9w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@rive-app/canvas': 2.10.3
+      react: 18.2.0
+    dev: false
 
   /@rushstack/eslint-patch@1.8.0:
     resolution: {integrity: sha512-0HejFckBN2W+ucM6cUOlwsByTKt9/+0tWhqUffNIcHqCXkthY/mZ7AuYPK/2IIaGWhdl0h+tICDO0ssLMd6XMQ==}
@@ -615,6 +642,12 @@ packages:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
     dev: true
+
+  /bip39@3.1.0:
+    resolution: {integrity: sha512-c9kiwdk45Do5GL0vJMe7tS95VjCii65mYAH7DfWl3uW8AVzXKQVUm64i3hzVybBDMp9r7j9iNxR85+ul8MdN/A==}
+    dependencies:
+      '@noble/hashes': 1.4.0
+    dev: false
 
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -2329,6 +2362,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-hook-form@7.51.1(react@18.2.0):
+    resolution: {integrity: sha512-ifnBjl+kW0ksINHd+8C/Gp6a4eZOdWyvRv0UBaByShwU8JbVx5hTcTWEcd5VdybvmPTATkVVXk9npXArHmo56w==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is@16.13.1:

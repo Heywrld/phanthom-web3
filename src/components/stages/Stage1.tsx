@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button } from "../ui/button";
 
-const Stage1 = () => {
+const Stage1 = ({ setStep }: { setStep: Dispatch<SetStateAction<number>> }) => {
   return (
     <div className="c11 flex h-full  flex-col items-center w-full">
       <div className="pt-10 my-auto flex items-center flex-col ">
@@ -25,8 +25,10 @@ const Stage1 = () => {
         </p>
       </div>
       <div className="mt-auto w-full flex flex-col gap-[10px]">
-        <Button className="text-blackGray">Create a new wallet</Button>
-        <Button className="bg-lightGray text-white">
+        <Button className="text-blackGray" onClick={() => setStep(2)}>
+          Create a new wallet
+        </Button>
+        <Button onClick={() => setStep(3)} className="bg-lightGray text-white">
           I already have a wallet
         </Button>
       </div>

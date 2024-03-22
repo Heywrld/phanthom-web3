@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
+import { FormStateProvider } from "@/hooks/useFormState";
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   variable: "--font-sans",
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${roboto.className} ${inter.className} flex flex-col p-4 md:py-[30px] md:px-[40px]`}
       >
-        {children}
+        <FormStateProvider>{children}</FormStateProvider>
       </body>
     </html>
   );

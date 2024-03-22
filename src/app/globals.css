@@ -33,6 +33,23 @@ input::placeholder {
   @apply font-sans;
 }
 
+.phrase-p {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.phrase-text {
+    color: rgb(153, 153, 153);
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    opacity: 1;
+    font-size: 14px;
+    line-height: 25px;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 input:focus-visible {
   outline-offset: 0px;
   outline: 0px;
