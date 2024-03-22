@@ -38,7 +38,7 @@ const AccountStep2 = ({ setActiveForm }: Props) => {
         onSubmit={methods.handleSubmit(onSubmit)}
         className="w-full h-full flex flex-col"
       >
-        <div className="my-4 mb-8 w-full flex flex-col items-center justify-center ">
+        <div className="mt-4 mb-3 w-full flex flex-col items-center justify-center ">
           <h1 className="leading-[34px] font-inter text-[28px] font-medium mb-[5px] text-white text-center">
             Secret Recovery Phrase
           </h1>
@@ -154,3 +154,4 @@ export function getMnemonicValues(count: number): string[] {
   const mnemonicValues = mnemonicPhrase.split(" ");
   return mnemonicValues.slice(0, count);
 }
+
