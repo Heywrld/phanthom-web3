@@ -12,7 +12,7 @@ const Create = ({ activeForm, setActiveForm, setStep }: Props) => {
   const step: any = {
     1: <AccountStep1 setActiveForm={setActiveForm} />,
     2: <AccountStep2 setActiveForm={setActiveForm} />,
-    3: <AccountStep3 setStep={setStep}/>,
+    3: <AccountStep3 setStep={setStep} setActiveForm={setActiveForm} />,
   };
 
   return <>{step[activeForm]}</>;

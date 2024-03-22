@@ -1,15 +1,16 @@
 "use client";
 import React from "react";
-import Rive, { useRive } from "@rive-app/react-canvas";
+import Rive from "@rive-app/react-canvas";
 import { Button } from "@/components/ui/button";
 
-const AccountStep3 = ({ setStep }: { setStep: any }) => {
+const AccountStep3 = ({
+  setStep,
+  setActiveForm,
+}: {
+  setStep: any;
+  setActiveForm: any;
+}) => {
   const src = "/ghost.riv";
-  const { RiveComponent } = useRive({
-    src,
-    stateMachines: "bumpy",
-    autoplay: true,
-  });
 
   return (
     <div className="flex flex-col items-center h-full">
@@ -26,6 +27,7 @@ const AccountStep3 = ({ setStep }: { setStep: any }) => {
           onClick={() => {
             setStep(1);
             console.log("CLICKED");
+            setActiveForm(1);
           }}
           className="mt-[2.25rem] disabled:bg-lightGray bg-deepPurple disabled:text-white text-blackGray "
         >
