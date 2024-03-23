@@ -17,7 +17,13 @@ const Stages = () => {
         setActiveForm={setActiveForm}
       />
     ),
-    3: <Login />,
+    3: (
+      <Login
+        setStep={setStep}
+        activeForm={activeForm}
+        setActiveForm={setActiveForm}
+      />
+    ),
   };
   return (
     <div className="h-full w-full flex flex-col">
@@ -26,10 +32,12 @@ const Stages = () => {
           <Back
             onClick={() =>
               activeForm > 1
-                ? step === 2 && activeForm === 3 // on the third step of the create acount form
+                ? step === 2 && activeForm === 1 // on the third step of the create acount form
+                  ? setStep(1)
+                  : step === 3 && activeForm === 1
                   ? setStep(1)
                   : setActiveForm((prev) => prev - 1)
-                : setStep((prev) => prev - 1)
+                : setStep(1)
             }
             className=" absolute left-4 top-4 "
           />
@@ -44,6 +52,21 @@ const Stages = () => {
                 key={i + 1}
               ></div>
             ))}
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="flex items-center gap-[10px] ">
+            {Array(4)
+              .fill("")
+              ?.map((_, i) => (
+                <div
+                  className={`size-3 rounded-full ${
+                    activeForm >= i + 1 ? "bg-lightPurple " : "bg-lightGray"
+                  }  `}
+                  key={i + 1}
+                ></div>
+              ))}
           </div>
         )}
       </div>

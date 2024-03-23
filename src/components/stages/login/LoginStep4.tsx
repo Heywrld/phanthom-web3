@@ -1,17 +1,15 @@
-"use client";
 import React from "react";
 import Rive from "@rive-app/react-canvas";
 import { Button } from "@/components/ui/button";
+import { useFormState } from "@/hooks/useFormState";
 
-const AccountStep3 = ({
-  setStep,
-  setActiveForm,
-}: {
+interface Props {
   setStep: any;
   setActiveForm: any;
-}) => {
+}
+const LoginStep4 = ({ setActiveForm, setStep }: Props) => {
   const src = "/ghost.riv";
-
+  const { setValue } = useFormState();
   return (
     <div className="flex flex-col items-center h-full">
       <Rive src={src} stateMachines="bumpy" className="h-[240px] w-[240px] " />
@@ -26,6 +24,7 @@ const AccountStep3 = ({
           type="button"
           onClick={() => {
             setStep(1);
+            setValue({});
             setActiveForm(1);
           }}
           className="mt-[2.25rem] disabled:bg-lightGray bg-deepPurple disabled:text-white text-blackGray "
@@ -37,4 +36,4 @@ const AccountStep3 = ({
   );
 };
 
-export default AccountStep3;
+export default LoginStep4;
