@@ -34,20 +34,20 @@ input::placeholder {
 }
 
 .phrase-p {
-    padding-left: 10px;
-    padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 5px;
 }
 
 .phrase-text {
-    color: rgb(153, 153, 153);
-    text-align: center;
-    font-style: normal;
-    font-weight: normal;
-    opacity: 1;
-    font-size: 14px;
-    line-height: 25px;
-    text-decoration: none;
-    background-color: transparent;
+  color: rgb(153, 153, 153);
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  opacity: 1;
+  font-size: 14px;
+  line-height: 25px;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 input:focus-visible {
@@ -87,10 +87,10 @@ html {
 .main {
   width: 100%;
   max-width: 420px;
-  max-height: 504px;
-  height: 100%;
+  min-height: 504px;
+  height: fit-content;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   background-color: rgb(34, 34, 34);
   border: 1px solid rgb(50, 50, 50);
   border-radius: 8px;

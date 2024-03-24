@@ -25,7 +25,7 @@ const PhraseInput = ({
   const { register } = useFormContext<any>();
   return (
     <div className="flex items-center h-[41px] w-full bg-deepBlack border focus-within:border-deepPurple border-grayFourSeven rounded-md shadow-phrase">
-      <span className="phrase-text phrase-p">{id}</span>
+      <span className="phrase-text phrase-p">{id}.</span>
       <Input
         readOnly={readonly}
         className="h-full w-full bg-transparent border-[0px] outline-none text-[15px] "

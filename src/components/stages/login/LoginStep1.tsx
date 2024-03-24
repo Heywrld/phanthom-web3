@@ -14,6 +14,7 @@ interface Props {
 }
 const LoginStep1 = ({ setActiveForm }: Props) => {
   const { value, setValue } = useFormState();
+  const [length, setLength] = useState(12);
 
   const methods = useForm({
     defaultValues: { ...value },
@@ -48,7 +49,7 @@ const LoginStep1 = ({ setActiveForm }: Props) => {
           </p>
         </div>
         <div className=" w-full grid grid-cols-3 gap-[10px]">
-          {Array(12)
+          {Array(length)
             .fill("")
             .map((_, i) => (
               <PhraseInput
@@ -59,9 +60,23 @@ const LoginStep1 = ({ setActiveForm }: Props) => {
               />
             ))}
         </div>
-        <p className="text-lightBlack text-[14px] text-center mt-5">
-          I have a 24-word recovery phrase
-        </p>
+        <div className="my-3">
+          {length === 12 ? (
+            <p
+              onClick={() => setLength(24)}
+              className="text-lightBlack text-[14px] cursor-pointer hover:text-lightPurple text-center"
+            >
+              I have a 24-word recovery phrase
+            </p>
+          ) : (
+            <p
+              onClick={() => setLength(12)}
+              className="text-lightBlack text-[14px] cursor-pointer text-center hover:text-lightPurple"
+            >
+              I have a 12-word recovery phrase
+            </p>
+          )}
+        </div>
         <div className="mt-auto w-full flex flex-col gap-[10px]">
           <Button
             type="submit"
