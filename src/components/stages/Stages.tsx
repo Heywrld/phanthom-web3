@@ -27,7 +27,7 @@ const Stages = () => {
   };
   return (
     <div className="h-full w-full flex flex-col">
-      <div className="h-[46px] border-b border-b-lightMiniGray relative flex justify-center items-center ">
+      <div className="h-[46px] py-3 md:py-0 border-b border-b-lightMiniGray relative flex justify-center items-center ">
         {step > 1 && (
           <Back
             onClick={() =>
