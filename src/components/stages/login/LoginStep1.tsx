@@ -16,9 +16,7 @@ const LoginStep1 = ({ setActiveForm }: Props) => {
   const { value, setValue } = useFormState();
   const [length, setLength] = useState(12);
 
-  const methods = useForm({
-    defaultValues: { ...value },
-  });
+  const methods = useForm();
 
   const onSubmit = (data: any) => {
     setActiveForm((prev) => prev + 1);
