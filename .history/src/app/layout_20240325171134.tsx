@@ -19,9 +19,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Phantom",
   description: "Phantom Web 3 App",
-  icons: {
-    icon: '/icon.png', // /public path
-  },
 };
 
 export default function RootLayout({

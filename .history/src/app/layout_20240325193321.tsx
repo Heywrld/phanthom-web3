@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   description: "Phantom Web 3 App",
   icons: {
     icon: '/icon.png', // /public path
+    size: '92x92'
   },
 };
 
