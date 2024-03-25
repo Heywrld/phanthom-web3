@@ -14,7 +14,7 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
   const [error, setError] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
 
- 
+  // console.log(formState);
   const password = methods.watch("password");
   const confirmPassword = methods.watch("confirmPassword");
 
@@ -29,7 +29,7 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
   };
 
   const onSubmit = (data: any) => {
-  
+    console.log(data?.password !== data?.confirmPassword);
     if (data?.password !== data?.confirmPassword) {
       setError("Password does not match");
     } else {

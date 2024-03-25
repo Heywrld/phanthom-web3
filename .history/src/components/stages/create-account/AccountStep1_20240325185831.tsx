@@ -14,7 +14,7 @@ const AccountStep1 = ({ setActiveForm }: Props) => {
   const [error, setError] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
 
- 
+  // console.log(formState);
   const password = methods.watch("password");
   const confirmPassword = methods.watch("confirmPassword");
 
